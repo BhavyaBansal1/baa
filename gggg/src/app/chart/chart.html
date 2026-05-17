@@ -1,0 +1,98 @@
+<div class="container-fluid mt-4">
+
+  <!-- STOCK CHARTS IN ONE LINE -->
+  <div class="stock-chart-line mb-4">
+
+    <div class="stock-chart-card" *ngFor="let stock of stocks">
+      <div class="card shadow-sm text-center h-100 p-2">
+        <h6 class="chart-title">{{ stock.name }} Price</h6>
+
+        <div class="chart-box">
+          <canvas #chartCanvas></canvas>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- MONTHLY RETURN -->
+  <div class="row g-3 mb-4">
+    <div class="col-12">
+      <div class="card shadow-sm text-center p-3">
+        <h5>Monthly Return</h5>
+
+        <div class="monthly-return-box">
+          <canvas #pieChartCanvas></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ADVISORY CHART -->
+  <div class="row g-3 mb-4">
+    <div class="col-12">
+      <div class="card shadow-sm text-center p-3">
+        <h5>Advisory Score</h5>
+
+        <div class="advisory-chart-box">
+          <canvas #advisorychartcanvas></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- USER SEGMENTATION SECTION -->
+  <div class="row g-3 mb-4">
+    <div class="col-12">
+      <div class="card shadow-sm p-4">
+
+        <h4 class="text-center mb-4">User Segmentation</h4>
+
+        <div class="row align-items-center">
+
+          <!-- Segment Info Cards -->
+          <div class="col-md-6">
+            <div class="segment-info">
+
+              <div class="segment-card">
+                <h6>Total Stock Quantity</h6>
+                <h3>{{ totalst }}</h3>
+              </div>
+
+              <div class="segment-card">
+                <h6>Total Fund Quantity</h6>
+                <h3>{{ totalmf }}</h3>
+              </div>
+
+              <div class="segment-card">
+                <h6>Total Holdings Quantity</h6>
+                <h3>{{ totalc }}</h3>
+              </div>
+
+              <div class="segment-card">
+                <h6>Risk Profile</h6>
+                <h3>{{ Risktype }}</h3>
+              </div>
+
+              <div class="segment-card">
+                <h6>Trading Segment</h6>
+                <h3>{{ tradingSegment }}</h3>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Segment Pie Chart -->
+          <div class="col-md-6 text-center">
+            <div class="segment-chart-box">
+              <canvas #segmentchartcanvas></canvas>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>

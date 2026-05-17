@@ -1,0 +1,74 @@
+<div class="container mt-4">
+
+  <h2 class="mb-4 text-center fw-bold">📊 Portfolio Summary</h2>
+
+  <!-- 🔹 SUMMARY CARDS -->
+  <div class="row text-center mb-4">
+
+    <div class="col-md-4 mb-3">
+      <div class="card shadow-sm p-3 summary-card">
+        <h6>💰 Total Value</h6>
+        <h4 class="text-primary">₹{{ portfolioValue }}</h4>
+      </div>
+    </div>
+
+    <div class="col-md-4 mb-3">
+      <div class="card shadow-sm p-3 summary-card">
+        <h6>💵 Cash</h6>
+        <h4 class="text-success">₹{{ balanceService.balanceamount }}</h4>
+      </div>
+    </div>
+
+    <div class="col-md-4 mb-3">
+      <div class="card shadow-sm p-3 summary-card">
+
+        <h5>{{ date | date:'mediumTime' }}</h5>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 🔹 RISK + ACTIVITY -->
+  <div class="card p-3 mb-4 shadow-sm">
+    <p><b>⚖️ Risk Profile:</b> {{ riskProfile }}</p>
+    <p><b>📊 Activity:</b> {{ activity }}</p>
+  </div>
+
+  <!-- 🔹 SEGREGATION -->
+  <div class="card p-3 mb-4 shadow-sm">
+    <h5>📈 Portfolio Segregation</h5>
+
+    <p class="mb-1">Stocks ({{ stockPercent | number:'1.0-2' }}%)</p>
+    <div class="progress mb-3">
+      <div class="progress-bar bg-primary" [style.width.%]="stockPercent"></div>
+    </div>
+    <p class="mb-1">Mutual Funds ({{ fundPercent | number:'1.0-2' }}%)</p>
+    <div class="progress">
+      <div class="progress-bar bg-primary" [style.width.%]="fundPercent"></div>
+    </div>
+  </div>
+
+  <!-- 🔥 HOLDINGS -->
+  <div class="card p-3 shadow-sm">
+    <h5 class="mb-3">📋 Your Holdings</h5>
+
+    <ul class="holding-list">
+      <li *ngFor="let h of holdings" class="holding-item">
+
+        <span class="dot"></span>
+
+        <b>{{ h.stockName }}</b>
+        <span class="type">({{ h.type }})</span>
+
+        | Qty: {{ h.quantity }}
+        | Price: ₹{{ h.price }}
+        | Value:
+        <span class="value">
+          ₹{{ h.quantity * h.price }}
+        </span>
+
+      </li>
+    </ul>
+  </div>
+
+</div>

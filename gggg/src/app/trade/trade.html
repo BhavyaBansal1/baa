@@ -1,0 +1,84 @@
+<div class="container mt-4">
+
+  <h2 class="text-center mb-4">Trade</h2>
+
+  <div class="alert alert-info text-center">
+    Available balance: <strong>${{balanceService.balanceamount}}</strong>
+  </div>
+
+  <div class="card p-4 shadow-sm">
+
+    <!-- Stock -->
+    <div class="mb-3">
+      <label class="form-label">Holding Name</label>
+      <select class="form-select" [(ngModel)]="stockName">
+        <option value="Microsoft">Microsoft</option>
+        <option value="Microsoft">MicroFund</option>
+        <option value="tata">tata</option>
+        <option value="tesla">tesla</option>
+        <option value="aapl">aapl</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Quantity</label>
+      <input type="number" class="form-control" [(ngModel)]="quantity" #qty="ngModel" min="1" step="1"
+        pattern="^[0-9]+$" required>
+      <div *ngIf="qty.invalid && qty.touched" class="text-danger">
+        <small *ngIf="qty.errors?.['pattern']">
+          Only whole numbers allowed
+        </small>
+        <small *ngIf="qty.errors?.['min']">
+          Minimum quantity should be greater than zero
+        </small>
+      </div>
+
+    </div>
+
+    <!-- Price -->
+    <p class="fw-bold">Price per share: ${{price}}</p>
+
+    <!-- Order Value -->
+    <div class="mb-3">
+      <button class="btn btn-primary me-2" (click)="calculateOrderValue()">Calculate</button>
+      <span class="fw-bold">${{Ordervalue}}</span>
+    </div>
+
+    <!-- Buttons -->
+    <div class="mb-3">
+      <button [disabled]="qty.invalid" class="btn btn-success me-2" (click)="buy()">Buy</button>
+      <button [disabled]="qty.invalid" class="btn btn-danger" (click)="sell()">Sell</button>
+    </div>
+
+
+    <div *ngIf="msg" class="alert alert-warning">
+      {{msg}}
+    </div>
+
+
+    <p class="text-muted">
+      Available shares of {{stockName}}:
+      {{ holdingservice.getQuantity(stockName) }}
+    </p>
+
+  </div>
+
+  <!-- Transactions -->
+  <div class="mt-4">
+    <h4>Transactions</h4>
+
+    <div *ngFor="let t of Transactions" class="card mb-2 p-3 shadow-sm">
+      <p>
+        <strong>{{t.type}}</strong>
+        {{t.Quantity}} of {{t.stockName}}
+      </p>
+
+      <small>
+        Price: ${{t.Price}} |
+        Time: {{t.CurrentTime | date:'yyyy-MM-dd HH:mm:ss'}}
+      </small>
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,62 @@
+
+  <div class="container mt-4">
+    <div class="row">
+
+      <!-- Portfolio Value -->
+      <div class="col-md-4">
+        <div class="card portfolio-card text-center shadow p-3">
+          <h5>Total Portfolio Value</h5>
+          <h3>${{ portfolioValue }}</h3>
+        </div>
+      </div>
+
+      <!-- Cash Balance -->
+      <div class="col-md-4">
+        <div class="card portfolio-card text-center shadow p-3">
+          <div class="justify-content-end"></div>
+          <h5>Total Cash</h5>
+          <h3>${{ balanceService.balanceamount }}</h3>
+        </div>
+      </div>
+<div class="col-md-4">
+        <div class="card portfolio-card text-center shadow p-3">
+          <div class="justify-content-end"></div>
+          <h5>Clock</h5>
+          <h3>{{ date |date:'hh:mm:ss'}}</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container mt-4">
+
+    <!-- CHARTS -->
+    <div class="row justify-content-center mb-3">
+
+      <!-- STOCK CHART -->
+    <div class="col-12 mb-3">
+      <div class="card p-3 shadow-sm text-center">
+
+
+        <div class="d-flex justify-content-center align-items-center" style="height:300px;">
+          <div style="width:600px; height:350px;">
+            <canvas id="stockChart"></canvas>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+      <!-- MUTUAL FUND CHART -->
+      <!-- <div class="col-md-4 text-center">
+        <div class="card p-3">
+          <h6>Mutual Funds</h6>
+          <canvas id="mfChart"></canvas>
+        </div>
+      </div>
+
+    </div> -->
+    <app-holding></app-holding>
+    <app-chart></app-chart>
+
+  </div>

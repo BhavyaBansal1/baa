@@ -1,0 +1,52 @@
+<div class="login-wrapper">
+
+  <div class="login-card">
+
+    <h2 class="title">Create Account 👋</h2>
+    <p class="subtitle">Sign up to start your journey</p>
+
+    <!-- Email -->
+    <div class="input-group">
+      <input type="email" [(ngModel)]="email" required />
+      <label>Email</label>
+    </div>
+
+    <!-- Password -->
+    <div class="input-group">
+      <input type="password" [(ngModel)]="password" required />
+      <label>Password</label>
+    </div>
+
+    <!-- Role -->
+    <div class="input-group">
+      <select [(ngModel)]="Role">
+        <option value="" disabled selected>Select Role</option>
+        <option value="Trader">Trader</option>
+        <option value="NonTrader">NonTrader</option>
+      </select>
+    </div>
+
+    <!-- Signup Button -->
+    <button class="login-btn" (click)="signup()">
+       Signup
+    </button>
+
+    <!-- Error -->
+    <p *ngIf="error" class="error-msg">
+      {{ error }}
+    </p>
+
+    <!-- Success -->
+    <p *ngIf="success" class="success-msg">
+      {{ success }}
+    </p>
+
+    <!-- Login Link -->
+    <p class="signup-text">
+      Already have an account?
+      <a   routerLink="/" >Login</a>
+    </p>
+
+  </div>
+
+</div>

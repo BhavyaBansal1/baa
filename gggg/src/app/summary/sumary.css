@@ -1,0 +1,52 @@
+/* Cards hover */
+.summary-card {
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+.summary-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+/* Holdings */
+.holding-list {
+  list-style: none;
+  padding: 0;
+}
+
+.holding-item {
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  background: #f8f9fb;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.holding-item:hover {
+  background: #e9f2ff;
+  transform: scale(1.01);
+}
+
+/* dot */
+.dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: #007bff;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+/* type */
+.type {
+  color: #666;
+  margin-left: 4px;
+}
+
+/* value highlight */
+.value {
+  font-weight: bold;
+  color: #007bff;
+}

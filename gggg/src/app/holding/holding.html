@@ -1,0 +1,83 @@
+<div class="container mt-4">
+
+  <!-- ACTION BAR -->
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h4 class="fw-bold">Portfolio</h4>
+
+    <div>
+      <button class="btn btn-outline-success me-2" (click)="pagereload()">
+        🔄 Refresh
+      </button>
+
+      <button class="btn btn-outline-primary"
+              (click)="toggle_load()">
+        {{ autore ? ' Stop Auto' : ' Auto Refresh' }}
+      </button>
+    </div>
+  </div>
+
+  <!-- CARD -->
+  <div class="card shadow-lg border-0 rounded-4">
+
+    <!-- HEADER -->
+    <div class="card-header text-white fw-semibold rounded-top-4"
+         style="background: linear-gradient(135deg, #1e3c72, #2a5298);">
+      📈 Stock Holdings
+    </div>
+
+    <!-- TABLE -->
+    <div class="table-responsive">
+      <table class="table table-hover align-middle mb-0">
+
+        <thead class="table-light">
+          <tr class="text-muted small text-uppercase">
+            <th>Stock</th>
+            <th class="text-center">Qty</th>
+            <th class="text-center">Avg Price</th>
+            <th class="text-center">Price</th>
+            <th class="text-center">profit/loss</th>
+            <th class="text-center">Value</th>
+            <th class="text-end">Time</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr *ngFor="let item of getstocks()"
+              class="hover-row">
+
+            <td class="fw-semibold">{{item.stockName}}</td>
+
+            <td class="text-center">{{item.quantity}}</td>
+
+            <td class="text-center">₹{{item.avgPrice}}</td>
+
+            <td class="text-center fw-semibold">₹{{item.price}}</td>
+
+            <!-- PROFIT / LOSS -->
+            <td class="text-center fw-bold"
+                [ngClass]="{
+                  'text-danger': (item.price - item.avgPrice) < 0,
+                  'text-success': (item.price - item.avgPrice) > 0
+                }">
+
+              {{item.price - item.avgPrice }}
+
+            </td>
+
+            <td class="text-center fw-semibold">
+              ₹{{item.price * item.quantity}}
+            </td>
+
+            <td class="text-end text-muted small">
+              {{item.currenttime | date:'MMM d, HH:mm'}}
+            </td>
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  
+</div>

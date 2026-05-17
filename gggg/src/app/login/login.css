@@ -1,0 +1,100 @@
+/* Background */
+.login-wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+
+}
+
+/* Card */
+.login-card {
+  width: 360px;
+  padding: 30px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Title */
+.title {
+  font-size: 22px;
+  font-weight: 600;
+  color:white;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color:white;
+  margin-bottom: 20px;
+}
+
+/* Input */
+.input-group {
+  margin-bottom: 18px;
+}
+
+.input-group label {
+  font-size: 13px;
+  color:white;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.input-group input,
+.input-group select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #d1d9e0;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.1);
+  outline: none;
+}
+.login-btn {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  background: #4f46e5; 
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.login-btn:hover {
+  background: #4338ca;
+}
+.error-msg {
+  color: #e53e3e; 
+  font-size: 13px;
+  margin-top: 10px;
+}
+
+/* Signup */
+.signup-text {
+  margin-top: 15px;
+  font-size: 13px;
+  color: white;
+  text-align: center;
+}
+
+.signup-text a {
+  color:wheat;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.signup-text a:hover {
+  text-decoration: underline;
+}

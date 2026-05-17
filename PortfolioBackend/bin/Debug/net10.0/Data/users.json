@@ -1,0 +1,20 @@
+[
+  {
+    "Email": "string",
+    "Password": "1234",
+    "Role": "trader",
+    "Name": "string"
+  },
+  {
+    "Email": "kk",
+    "Password": "1234",
+    "Role": "Trader",
+    "Name": "kk"
+  },
+  {
+    "Email": "bhavya1@gmail.com",
+    "Password": "1234",
+    "Role": "Trader",
+    "Name": "bhavya1"
+  }
+]

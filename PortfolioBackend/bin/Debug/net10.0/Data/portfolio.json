@@ -1,0 +1,29 @@
+{
+  "BalanceAmount": 9632,
+  "Holdings": [
+    {
+      "StockName": "Microsoft",
+      "Quantity": 4,
+      "CurrentTime": 1779011433643,
+      "Type": "stock",
+      "Price": 92,
+      "AvgPrice": 92
+    }
+  ],
+  "Transactions": [
+    {
+      "StockName": "Microsoft",
+      "Quantity": 2,
+      "Price": 92,
+      "Type": "Buy",
+      "CurrentTime": 1779011432013
+    },
+    {
+      "StockName": "Microsoft",
+      "Quantity": 2,
+      "Price": 92,
+      "Type": "Buy",
+      "CurrentTime": 1779011433643
+    }
+  ]
+}
